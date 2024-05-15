@@ -15,7 +15,17 @@ namespace ind_work
 
         public void ShowRole(string role)
         {
-            lblRole.Text = role;
+            if (role != "Unauthorized")
+            {
+                Form2 form2 = new Form2(role);
+                this.Hide();
+                form2.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                lblRole.Text = role;
+            }
         }
         private void btnAuthorize_Click(object sender, EventArgs e)
         {
